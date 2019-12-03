@@ -1,0 +1,92 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-ftk4p[0m
+{"level":"warn","ts":1575390302.247173,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575390302.2479556,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-z5n4b[0m
+{"level":"warn","ts":1575390303.166681,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575390303.1681654,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-4hbrr[0m
+{"level":"warn","ts":1575390310.3015003,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575390311.8817317,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5d840fe89f491aa130f53348503e89bebcf1d319
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/**-app-fossa main.go
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/**-app-fossa"]                 
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2019/12/03 16:25:28 pushed blob: sha256:b69b479f49e18630ef7881f23abcee3ceb51e342a3b444079dc2dd0aea316466
+2019/12/03 16:25:29 pushed blob: sha256:e2cced9dd5eab0f09da7ae92d0c8e53c0d3b08d7499385c72f346c710353230b
+2019/12/03 16:25:30 gcr.io/**-mar19/**-app-fossa:0.0.1: digest: sha256:9ec94de6a3c9299fa298cbecb78229bfa58d9ef8f027d764dcec46dc9d6f864a size: 428
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/**-app-fossa to an unshallow repository
+Generating change log from git ref 5b2377a2893a9b3c27d192a3aa8487fc1b09372c => f9944425c220e428403cb2006f9fe07b93dc12dd
+WARNING: Failed to enrich commit 5d840fe89f491aa130f53348503e89bebcf1d319 with issues: selected more than one user from users.jenkins.io: [tdcox x-0]
+WARNING: Failed to enrich commit 5d840fe89f491aa130f53348503e89bebcf1d319 with issues: selected more than one user from users.jenkins.io: [tdcox x-0]
+Finding issues in commit messages using git format
+WARNING: No release found for Bootstrap-Jersey/**-app-fossa and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/Bootstrap-Jersey/**-app-fossa/releases/tag/v0.0.1
+generated: /workspace/source/charts/**-app-fossa/templates/release.yaml
+Created Release **-app-fossa-0-0-1 resource in namespace **
+Updating PipelineActivity bootstrap-jersey-**-app-fossa-master-1 with version 0.0.1
+Updated PipelineActivities bootstrap-jersey-**-app-fossa-master-1 with release notes URL: https://github.com/Bootstrap-Jersey/**-app-fossa/releases/tag/v0.0.1
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file **-app-fossa-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app **-app-fossa version 0.0.1 to namespace **-man
+Created Pull Request: https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+Added label updatebot to Pull Request https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/6
+Pull Request https://github.com/Bootstrap-Jersey/environment-**-man/pull/6 is merged at sha 732ddca530f50f188fd5354eb95560b1227dfb86
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-man for names **-app-fossa, **-**-app-fossa, **-man-**-app-fossa
+Promoting app **-app-fossa version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/7
+Added label updatebot to Pull Request https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/7
+WARNING: Failed to query the Pull Request last commit status for https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/7 ref b11d0e28ef16a8dc5430eaad086934415f1e0939 Could not find a status for repository Bootstrap-Jersey/environment-d80-staging with ref b11d0e28ef16a8dc5430eaad086934415f1e0939
+WARNING: Failed to query the Pull Request last commit status for https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/7 ref b11d0e28ef16a8dc5430eaad086934415f1e0939 Could not find a status for repository Bootstrap-Jersey/environment-d80-staging with ref b11d0e28ef16a8dc5430eaad086934415f1e0939
+Pull Request https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/7 is merged at sha 45180f902da2f7c4cdf12916e0b035b7460c35a5
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names **-app-fossa, **-**-app-fossa, **-staging-**-app-fossa
