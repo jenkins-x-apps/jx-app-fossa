@@ -1,0 +1,28 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-credential-initializer-6z8wj[0m
+{"level":"warn","ts":1575392717.945067,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575392717.9456837,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-2kj8r[0m
+{"level":"warn","ts":1575392718.9703264,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575392718.971988,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-wvvjw[0m
+{"level":"warn","ts":1575392820.1328394,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575392821.75481,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5dcccbc36dca2f97433dc3528c5e1148a2fdb9dd
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-cf44v-2[0m stage [32mrelease[0m and container [32mstep-step2[0m
+go: warning: "./..." matched no packages
+go: warning: "./..." matched no packages
+echo "platform Linux not supported to tag with"
+platform Linux not supported to tag with
+exit -1
+make: *** [update-release-version] Error 255
+[31m
+Pipeline failed on stage 'release' : container 'step-step2'. The execution of the pipeline has stopped.[0m
