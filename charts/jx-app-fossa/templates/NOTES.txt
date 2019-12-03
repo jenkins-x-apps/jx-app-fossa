@@ -1,4 +1,5 @@
+Install with:
 
-Get the application URL by running these commands:
+  $ jx add app {{ .Chart.Name }}
 
-kubectl get ingress {{ template "fullname" . }}
+This app extends the build pipeline to run Open Source licence checks via FOSSA.

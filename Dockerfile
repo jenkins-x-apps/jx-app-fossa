@@ -1,4 +1,4 @@
 FROM scratch
-EXPOSE 8080
-ENTRYPOINT ["/jx-app-fossa"]
-COPY ./bin/ /
+COPY ./jx-app-fossa.sh /
+RUN chmod +x /jx-app-fossa.sh
+ENTRYPOINT ["/jx-app-fossa.sh"]

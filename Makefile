@@ -67,3 +67,29 @@ watch:
 
 skaffold-run: build
 	skaffold run -p dev
+
+.PHONY: release
+release: update-release-version skaffold-build detach-and-release ## Creates a release
+	cd charts/jx-app-fossa && jx step helm release
+	jx step changelog --version v$(VERSION) -p $$(git merge-base $$(git for-each-ref --sort=-creatordate --format='%(objectname)' refs/tags | sed -n 2p) master) -r $$(git merge-base $$(git for-each-ref --sort=-creatordate --format='%(objectname)' refs/tags | sed -n 1p) master)
+
+.PHONY: update-release-version
+update-release-version: ## Updates the release version
+ifeq ($(OS),darwin)
+	sed -i "" -e "s/version:.*/version: $(VERSION)/" ./charts/jx-app-fossa/Chart.yaml
+	sed -i "" -e "s/tag: .*/tag: $(VERSION)/" ./charts/jx-app-fossa/values.yaml
+else ifeq ($(OS),linux)
+	sed -i -e "s/version:.*/version: $(VERSION)/" ./charts/jx-app-fossa/Chart.yaml
+	sed -i -e "s/tag: .*/tag: $(VERSION)/" ./charts/jx-app-fossa/values.yaml
+else
+	echo "platform $(OS) not supported to tag with"
+	exit -1
+endif
+
+.PHONY: detach-and-release
+detach-and-release:  ## Gets into detached HEAD mode and  pushes release
+	git checkout $(shell git rev-parse HEAD)
+	git add --all
+	git commit -m "release $(VERSION)" --allow-empty # if first release then no version update is performed
+	git tag -fa v$(VERSION) -m "Release version $(VERSION)"
+	git push origin HEAD v$(VERSION)
