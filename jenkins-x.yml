@@ -6,27 +6,10 @@ pipelineConfig:
         agent:
           image: gcr.io/jenkinsxio/builder-go:2.0.1050-383
         stages:
-          - name: setup
-            steps:
-            - groovy: git 'https://REPLACE_ME_GIT_PROVIDER/REPLACE_ME_ORG/REPLACE_ME_APP_NAME.git'
-              when: "prow"
-            - groovy: checkout scm
-              when: "!prow"
-            - sh: git checkout master
-              name: git-checkout-master
-              comment: ensure we're not on a detached head
-              when: "!prow"
-            - sh: git config --global credential.helper store
-              when: "!prow"
-              name: git-config
-            - sh: jx step git credentials
-              when: "!prow"
-              name: git-credentials
           - name: setVersion
             steps:
             - sh: echo \$(jx-release-version) > VERSION
               name: next-version
-              comment: so we can retrieve the version in later steps
             - sh: jx step tag --version \$(cat VERSION)
               name: tag-version
           - name: release
