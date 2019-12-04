@@ -1,18 +1,1 @@
-buildPack: none
-pipelineConfig:
-  agent:
-    label: jenkins-go
-    container: go
-    dir: /home/jenkins/go/src/REPLACE_ME_GIT_PROVIDER/REPLACE_ME_ORG/REPLACE_ME_APP_NAME
-  pipelines:
-    release:
-      pipeline:
-        agent:
-          image: gcr.io/jenkinsxio/builder-go:2.0.1050-383
-        stages:
-          - name: release
-            steps:
-            - sh: pwd && ls -l && export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
-              name: container-build
-            - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
-              name: post-build
+buildPack: go
