@@ -10,12 +10,6 @@ pipelineConfig:
         agent:
           image: gcr.io/jenkinsxio/builder-go:2.0.1050-383
         stages:
-          - name: setVersion
-            steps:
-            - sh: echo \$(jx-release-version) > VERSION
-              name: next-version
-            - sh: jx step tag --version \$(cat VERSION)
-              name: tag-version
           - name: release
             steps:
             - sh: export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
