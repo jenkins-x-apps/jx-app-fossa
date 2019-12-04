@@ -78,7 +78,7 @@ update-release-version: ## Updates the release version
 ifeq ($(OS),darwin)
 	sed -i "" -e "s/version:.*/version: $(VERSION)/" ./charts/jx-app-fossa/Chart.yaml
 	sed -i "" -e "s/tag: .*/tag: $(VERSION)/" ./charts/jx-app-fossa/values.yaml
-else ifeq ($(OS),linux)
+else ifeq ($(OS),Linux)
 	sed -i -e "s/version:.*/version: $(VERSION)/" ./charts/jx-app-fossa/Chart.yaml
 	sed -i -e "s/tag: .*/tag: $(VERSION)/" ./charts/jx-app-fossa/values.yaml
 else
