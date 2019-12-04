@@ -11,6 +11,7 @@ PKGS := $(subst  :,_,$(PKGS))
 BUILDFLAGS := ''
 CGO_ENABLED = 0
 VENDOR_DIR=vendor
+DOCKER_REGISTRY ?= docker.io
 
 all: build
 
