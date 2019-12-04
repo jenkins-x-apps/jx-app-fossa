@@ -1,0 +1,26 @@
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-jr7bt[0m
+{"level":"warn","ts":1575474920.1250918,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575474920.1257899,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-lc6lt[0m
+{"level":"warn","ts":1575474920.5149925,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575474920.5162814,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-bootstrap-jersey-jx-app-fo-vbpjf[0m
+{"level":"warn","ts":1575474926.5959902,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575474928.1526418,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ 953bf07230df27ac2ec932efcbe211209d96cbf8 in path /workspace/source"}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:953bf07230df27ac2ec932efcbe211209d96cbf8
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-tj7d5-7[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: failed to create effective pipeline for release: validation failed for Pipeline: the groovy field is only valid in legacy build packs, not in jenkins-x.yml. Please remove it.: stages[0].steps[0].groovy
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
