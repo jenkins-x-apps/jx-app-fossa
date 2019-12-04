@@ -65,6 +65,10 @@ lint: vendor | $(PKGS) $(GOLINT) # ❷
 watch:
 	reflex -r "\.go$" -R "vendor.*" make skaffold-run
 
+.PHONY: skaffold-build
+skaffold-build: 
+	DOCKER_REGISTRY=$(DOCKER_REGISTRY) VERSION=$(VERSION) skaffold build -f skaffold.yaml
+
 skaffold-run: build
 	skaffold run -p dev
 
