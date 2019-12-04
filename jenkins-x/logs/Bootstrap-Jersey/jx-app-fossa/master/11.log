@@ -1,0 +1,41 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-credential-initializer-76jlr[0m
+{"level":"warn","ts":1575476936.1390789,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575476936.139715,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-mn86x[0m
+{"level":"warn","ts":1575476937.4830506,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575476937.48455,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-zmwzn[0m
+{"level":"warn","ts":1575476943.6020153,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575476945.2251751,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.10 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:015abb68ebb38b22e2618ef1f2290b6ba55b7129
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6k489-11[0m stage [32mrelease[0m and container [32mstep-container-build[0m
+/workspace/source
+total 48
+drwxr-xr-x 3 root root  4096 Dec  4 16:29 charts
+-rw-r--r-- 1 root root   100 Dec  4 16:29 Dockerfile
+-rwxr-xr-x 1 root root   604 Dec  4 16:29 jenkins-x.yml
+-rw-r--r-- 1 root root   257 Dec  4 16:29 **-app-fossa.sh
+-rw-r--r-- 1 root root 11348 Dec  4 16:29 LICENSE
+-rw-r--r-- 1 root root  3106 Dec  4 16:29 Makefile
+-rw-r--r-- 1 root root    38 Dec  4 16:29 OWNERS
+-rw-r--r-- 1 root root    65 Dec  4 16:29 OWNERS_ALIASES
+-rw-r--r-- 1 root root    16 Dec  4 16:29 README.md
+-rw-r--r-- 1 root root   644 Dec  4 16:29 skaffold.yaml
+cat: VERSION: No such file or directory
+Generating tags...
+ - **-mar19/**-app-fossa -> /**-mar19/**-app-fossa:
+Checking cache...
+ - **-mar19/**-app-fossa: Not found. Building
+Building [**-mar19/**-app-fossa]...
+time="2019-12-04T16:29:06Z" level=fatal msg="build failed: build failed: building [**-mar19/**-app-fossa]: build artifact: docker build: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?"
+[31m
+Pipeline failed on stage 'release' : container 'step-container-build'. The execution of the pipeline has stopped.[0m
