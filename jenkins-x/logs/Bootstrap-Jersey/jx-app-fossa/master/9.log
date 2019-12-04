@@ -1,0 +1,24 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-credential-initializer-c488x[0m
+{"level":"warn","ts":1575476532.712416,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575476532.7127979,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-working-dir-initializer-pxckk[0m
+{"level":"warn","ts":1575476533.2499137,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575476533.2513647,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-nnmdv[0m
+{"level":"warn","ts":1575476539.3526764,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575476541.218568,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.8 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:49cd95022a6a707a16ab6f2c946254c94f8683b6
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-bqzcj-9[0m stage [32msetversion[0m and container [32mstep-next-version[0m
+/bin/sh: -c: line 0: syntax error near unexpected token `('
+/bin/sh: -c: line 0: `echo \$(**-release-version) > VERSION'
+[31m
+Pipeline failed on stage 'setversion' : container 'step-next-version'. The execution of the pipeline has stopped.[0m
