@@ -1,0 +1,27 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-credential-initializer-r6lkc[0m
+{"level":"warn","ts":1575463021.496989,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575463021.4975595,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-8ppj6[0m
+{"level":"warn","ts":1575463022.4223602,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575463022.423625,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-8fmsv[0m
+{"level":"warn","ts":1575463027.5261753,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575463029.0730257,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5f5262a587d92d59f1ba20aa85862ac0b684cc7e
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-899gc-3[0m stage [32mrelease[0m and container [32mstep-step2[0m
+go: warning: "./..." matched no packages
+go: warning: "./..." matched no packages
+sed -i -e "s/version:.*/version: 0.0.3/" ./charts/**-app-fossa/Chart.yaml
+sed -i -e "s/tag: .*/tag: 0.0.3/" ./charts/**-app-fossa/values.yaml
+make: *** No rule to make target `skaffold-build', needed by `release'.  Stop.
+[31m
+Pipeline failed on stage 'release' : container 'step-step2'. The execution of the pipeline has stopped.[0m
