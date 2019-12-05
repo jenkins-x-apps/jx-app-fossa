@@ -11,3 +11,5 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         command: /jx-app-fossa.sh
         args:
+          - none
+
