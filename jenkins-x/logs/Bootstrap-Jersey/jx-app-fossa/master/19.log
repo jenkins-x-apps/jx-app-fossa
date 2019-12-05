@@ -1,0 +1,54 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-f77tr[0m
+{"level":"warn","ts":1575556171.6839666,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575556171.6848094,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-zk4lz[0m
+{"level":"warn","ts":1575556172.2024987,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575556172.2041655,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-f2g6s[0m
+{"level":"warn","ts":1575556178.3105986,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575556179.8981903,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.18 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3cc011bce898d7874be91b827c2d3e8ffc5189cb
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+go: warning: "./..." matched no packages
+go: warning: "./..." matched no packages
+echo 'nothing to build'
+nothing to build
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-qjpvg-19[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:60476d4d3aa2232bdf15bcdcef05c5b8795acf9947df6cfc850cadf61aafa7a2: no such file or directory 
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/**-mar19/cache:b529903034126f6cb9c73d1ef7c8a38a9f0ecce7af2fbfd734a92ae3c598e1e8... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"v([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/v'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"v([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/v'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl requires it. 
+[36mINFO[0m[0223] Taking snapshot of full filesystem...        
+[36mINFO[0m[1630] RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"v([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/v'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl 
+[36mINFO[0m[1630] cmd: /bin/sh                                 
+[36mINFO[0m[1630] args: [-c mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"v([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/v'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  8510  100  8510    0     0  31872      0 --:--:-- --:--:-- --:--:-- 31872
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   626    0   626    0     0   2166      0 --:--:-- --:--:-- --:--:--  2158
+CHANGELOG.md
+LICENSE
+README.md
+fossa
+  7 5862k    7  457k    0     0   455k      0  0:00:12  0:00:01  0:00:11  455k100 5862k  100 5862k    0     0  4040k      0  0:00:01  0:00:01 --:--:-- 11.8M
+mv: cannot move 'fossa-dl/fossa' to '/usr/bin/fossa': Permission denied
+error building image: error building stage: waiting for process to exit: exit status 1
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
