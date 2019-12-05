@@ -1,0 +1,52 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-lbt4r[0m
+{"level":"warn","ts":1575549098.4708612,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575549098.4715369,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-bng5s[0m
+{"level":"warn","ts":1575549099.42855,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575549099.4296913,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-tphbt[0m
+{"level":"warn","ts":1575549106.5208807,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575549108.0996904,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.17 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:aaace9e07b02ab5d3d993e2d662e612362900fd9
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+go: warning: "./..." matched no packages
+go: warning: "./..." matched no packages
+echo 'nothing to build'
+nothing to build
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6vdqk-18[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:60476d4d3aa2232bdf15bcdcef05c5b8795acf9947df6cfc850cadf61aafa7a2: no such file or directory 
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/**-mar19/cache:c49e48dff77099a08cc4b1f6ea4f83d481a3f2edcbd293859350a9615e4b1a0f... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl requires it. 
+[36mINFO[0m[0265] Taking snapshot of full filesystem...        
+[36mINFO[0m[1670] RUN mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl 
+[36mINFO[0m[1670] cmd: /bin/sh                                 
+[36mINFO[0m[1670] args: [-c mkdir fossa-dl && curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" |     grep '"tag_name":' |     sed -E 's/.*"([^"]+)".*/\1/' |     xargs -I {} curl -fL 'https://github.com/fossas/fossa-cli/releases/download/'{}'/fossa-cli_'{}'_linux_amd64.tar.gz' | tar xzvC fossa-dl && mv fossa-dl/fossa /usr/bin && rm -rf fossa-dl] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  4  8510    4   342    0     0    950      0  0:00:08 --:--:--  0:00:08   947100  8510  100  8510    0     0  23638      0 --:--:-- --:--:-- --:--:-- 23573
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+gzip: invalid magic
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
