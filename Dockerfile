@@ -1,4 +1,4 @@
-FROM gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine
+FROM gcr.io/jenkinsxio/builder-go-maven:2.0.1062-389
 USER root
 COPY ./jx-app-fossa.sh /
 ENTRYPOINT ["/jx-app-fossa.sh"]
