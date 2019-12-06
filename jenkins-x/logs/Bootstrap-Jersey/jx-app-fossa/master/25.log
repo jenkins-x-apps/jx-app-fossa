@@ -1,0 +1,112 @@
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-phtdd[0m
+{"level":"warn","ts":1575642642.4411738,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575642642.4415605,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-h8kjf[0m
+{"level":"warn","ts":1575642643.4675374,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1575642643.4688776,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-bootstrap-jersey-jx-app-fossa-m-cw2gw[0m
+{"level":"warn","ts":1575642651.6474822,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1575642653.335673,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ v0.0.24 in path /workspace/source"}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:ff3c344ba1bf8dba5b1e959ecdc60da8def2463a
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+go: warning: "./..." matched no packages
+go: warning: "./..." matched no packages
+echo 'nothing to build'
+nothing to build
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:60476d4d3aa2232bdf15bcdcef05c5b8795acf9947df6cfc850cadf61aafa7a2: no such file or directory 
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/dev-env-base:0.0.468-go-alpine 
+[36mINFO[0m[0001] cmd: USER                                    
+[36mINFO[0m[0001] Using files from context: [/workspace/source/**-app-fossa.sh] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] USER root                                    
+[36mINFO[0m[0001] cmd: USER                                    
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/**-app-fossa.sh] 
+[36mINFO[0m[0001] COPY ./**-app-fossa.sh /                     
+[36mINFO[0m[0001] Taking snapshot of files...                  
+[36mINFO[0m[0001] ENTRYPOINT ["/**-app-fossa.sh"]              
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+2019/12/06 14:30:57 existing blob: sha256:1ec62c064901392a6722bb47a377c01a381f4482b1ce094b6d28682b6b6279fd
+2019/12/06 14:30:57 existing blob: sha256:8ef94372a977c02d425f12c8cbda5416e372b7a869a6c2b20342c589dba3eae5
+2019/12/06 14:30:57 existing blob: sha256:7047deb9704134ff71c99791be3f6474bb45bc3971dde9257ef9186d7cb156db
+2019/12/06 14:30:57 existing blob: sha256:43933ca03ed48ab8b608f64912428c572860193e114e253449c132ad70111a93
+2019/12/06 14:30:57 existing blob: sha256:2e662e72909f9d703c470f421fb7c44218be4a3151545b623ce79359d8138353
+2019/12/06 14:30:57 existing blob: sha256:56d4b1d1453e29e1bcefe6f207cc8ead76942fe02899005ef82285fde34f52ce
+2019/12/06 14:30:57 existing blob: sha256:6df8628696ba06402303a8f57c010ca6dd038930b1867ee35a896e98ddc9081c
+2019/12/06 14:30:57 existing blob: sha256:2e9c024d2aea958b2f51371794a0e8a44b81f25142568711fd9e96ca9ebf9c2f
+2019/12/06 14:30:57 existing blob: sha256:753bb081aae0980eda36ee9554ec077405452cc4731d4ee84fdbd5338c0da12b
+2019/12/06 14:30:57 existing blob: sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17
+2019/12/06 14:30:57 existing blob: sha256:d6cc781b9ccdb5cb1ac85410e7f8fdfc1d38d09d1fefc0720ed3aea89e77e30d
+2019/12/06 14:30:57 existing blob: sha256:57d81925510b98f2583d7d59a4d1490b4cb7ce0afeb093b01affe968bc7ad359
+2019/12/06 14:30:57 existing blob: sha256:1c712a02306e668e7062cbcc97c31f9554440df3f2364003465fca72534467c3
+2019/12/06 14:30:57 existing blob: sha256:101bbbc32d1a66114bb96378751dd803ebfb5bde6c8325c83c22888a40d260a3
+2019/12/06 14:30:57 existing blob: sha256:5493e2195a753ebaf61c9f239fb016410803217c14eb7ce7d31972820c07e511
+2019/12/06 14:30:57 existing blob: sha256:025f14a3d97f92c07a07446e7ea8933b86068d00da9e252cf3277e9347b6fe69
+2019/12/06 14:30:57 existing blob: sha256:077ddddf743b2fb382254ece0cb366f6815ccf61fc8b4a4a99f36ff593ddf262
+2019/12/06 14:30:57 existing blob: sha256:72aed342b8763fc7ab2acb70adeb069739f1138138357d616369411a1b47de0d
+2019/12/06 14:31:00 pushed blob: sha256:53710d0e3f69d0da3ffc375518c3b46016f425647651ac2af6da6db0d5d789b6
+2019/12/06 14:31:00 pushed blob: sha256:c0a4a27e4e814bdc7053bfd62d1bd0acffe620cd8b36973c05aaf2bfd2d71b1b
+2019/12/06 14:31:01 gcr.io/**-mar19/**-app-fossa:0.0.24: digest: sha256:0b527bc51869b4f79a009aca6b214839cc58cd4c691c933a2f8fc4121f4ea29e size: 3361
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/**-app-fossa to an unshallow repository
+Generating change log from git ref 6b971a5b4f84fbbf1e2260788339fc403a15a81a => f6ff34a250cf94263bf0c8e625f94f9335b6b4d0
+WARNING: Failed to enrich commit ff3c344ba1bf8dba5b1e959ecdc60da8def2463a with issues: selected more than one user from users.jenkins.io: [tdcox x-0]
+WARNING: Failed to enrich commit ff3c344ba1bf8dba5b1e959ecdc60da8def2463a with issues: selected more than one user from users.jenkins.io: [tdcox x-0]
+Finding issues in commit messages using git format
+WARNING: No release found for Bootstrap-Jersey/**-app-fossa and tag v0.0.24 so creating a new release
+Updated the release information at https://github.com/Bootstrap-Jersey/**-app-fossa/releases/tag/v0.0.24
+generated: /workspace/source/charts/**-app-fossa/templates/release.yaml
+Created Release **-app-fossa-0-0-24 resource in namespace **
+Updating PipelineActivity bootstrap-jersey-**-app-fossa-master-25 with version 0.0.24
+Updated PipelineActivities bootstrap-jersey-**-app-fossa-master-25 with release notes URL: https://github.com/Bootstrap-Jersey/**-app-fossa/releases/tag/v0.0.24
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file **-app-fossa-0.0.24.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mbootstrap-jersey-jx-app-fossa-m-6xhtg-25[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app **-app-fossa version 0.0.24 to namespace **-man
+Created Pull Request: https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+Added label updatebot to Pull Request https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+got git provider status pending from PR https://github.com/Bootstrap-Jersey/environment-**-man/pull/17
+Pull Request https://github.com/Bootstrap-Jersey/environment-**-man/pull/17 is merged at sha 77d0a0cbd5f8df5d59994cbc9389d59f248fc58a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-man for names **-app-fossa, **-**-app-fossa, **-man-**-app-fossa
+Promoting app **-app-fossa version 0.0.24 to namespace **-staging
+Created Pull Request: https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/17
+Added label updatebot to Pull Request https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/17
+WARNING: Failed to query the Pull Request last commit status for https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/17 ref a9f0ce22fba19e83ca196ada3139ce4b492c1fcf Could not find a status for repository bootstrap-jersey/environment-d80-staging with ref a9f0ce22fba19e83ca196ada3139ce4b492c1fcf
+Pull Request https://github.com/Bootstrap-Jersey/environment-d80-staging/pull/17 is merged at sha e38b72f9eb054c09aaf15dde78099d4b170514c2
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names **-app-fossa, **-**-app-fossa, **-staging-**-app-fossa
