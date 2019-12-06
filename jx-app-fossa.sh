@@ -2,7 +2,7 @@ whoami
 pwd
 env
 ls -la
-if [ "$PIPELINE_KIND" == "release"]
+if [ "$PIPELINE_KIND" == "release"]; then
     mkdir fossa-dl
     curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" | \
         grep '"tag_name":' | \
