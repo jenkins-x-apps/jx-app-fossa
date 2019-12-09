@@ -2,7 +2,9 @@ whoami
 pwd
 env
 ls -la
-if [ ! echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})' ]; then
+IS_RELEASE_BUILD=`echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'`
+echo $IS_RELEASE_PIPELINE
+if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
     mkdir fossa-dl
     curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" | \
         grep '"tag_name":' | \
