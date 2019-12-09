@@ -24,6 +24,6 @@ if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
     export FOSSA_API_KEY=e8f6249ad76777febbcc6f59b43074b0
     fossa analyze
     fossa test
-elif
+else
     echo "Skipping FOSSA scan"
 fi
