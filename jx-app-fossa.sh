@@ -2,10 +2,17 @@ whoami
 pwd
 env
 ls -la
-echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'
-IS_RELEASE_PIPELINE=`echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'`
-echo $IS_RELEASE_PIPELINE
-if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
+# Try and establish what phase of what type of build pipeline we are in
+[[ "${PIPELINE_KIND}" == "pullrequest" ]] && [ ! -f .pre-commit-config.yaml ] && IS_PREVIEW_PIPELINE="true" || IS_PREVIEW_PIPELINE="false"
+if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
+    echo "Detected Preview pipeline";
+fi
+[[ "$PIPELINE_KIND" == "release" ]] && IS_RELEASE_PIPELINE="true" || IS_RELEASE_PIPELINE="false"
+if [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
+    echo "Detected Release pipeline";
+fi
+# Only activate in preview builds or the first stage of a release
+if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
     mkdir fossa-dl
     curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" | \
         grep '"tag_name":' | \
