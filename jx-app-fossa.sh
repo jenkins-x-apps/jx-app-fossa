@@ -2,6 +2,7 @@ whoami
 pwd
 env
 ls -la
+echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'
 IS_RELEASE_BUILD=`echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'`
 echo $IS_RELEASE_PIPELINE
 if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
