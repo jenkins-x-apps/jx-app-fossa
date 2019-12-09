@@ -3,7 +3,7 @@ pwd
 env
 ls -la
 echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'
-IS_RELEASE_BUILD=`echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'`
+IS_RELEASE_BUILD=echo $JOB_SPEC | jq 'contains({"type": "postsubmit", "job": "release"})'
 echo $IS_RELEASE_PIPELINE
 if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
     mkdir fossa-dl
@@ -24,4 +24,6 @@ if [ "$IS_RELEASE_PIPELINE" == "false" ]; then
     export FOSSA_API_KEY=e8f6249ad76777febbcc6f59b43074b0
     fossa analyze
     fossa test
+elif
+    echo "Skipping FOSSA scan"
 fi
