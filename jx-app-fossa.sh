@@ -2,6 +2,8 @@ whoami
 pwd
 env
 ls -la
+unset IS_PREVIEW_PIPELINE
+unset IS_RELEASE_PIPELINE
 # Try and establish what phase of what type of build pipeline we are in
 [[ "${PIPELINE_KIND}" == "pullrequest" ]] && [ ! -f .pre-commit-config.yaml ] && IS_PREVIEW_PIPELINE="true" || IS_PREVIEW_PIPELINE="false"
 if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
@@ -13,6 +15,9 @@ if [[ ${IS_RELEASE_PIPELINE} == "true" ]] && [ ! -f .pre-commit-config.yaml ] ; 
 fi
 # Only activate in preview builds or the first stage of a release
 if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
+    echo "FOSSA is scanning dependencies..."
+    echo $IS_PREVIEW_PIPELINE
+    echo $IS_RELEASE_PIPELINE
     mkdir fossa-dl
     curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" | \
         grep '"tag_name":' | \
