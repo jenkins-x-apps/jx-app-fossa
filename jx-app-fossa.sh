@@ -9,8 +9,8 @@ unset IS_RELEASE_PIPELINE
 if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
     echo "Detected Preview pipeline";
 fi
-[[ "$PIPELINE_KIND" == "release" ]] && IS_RELEASE_PIPELINE="true" || IS_RELEASE_PIPELINE="false"
-if [[ ${IS_RELEASE_PIPELINE} == "true" ]] && [ ! -f .pre-commit-config.yaml ] ; then
+[[ "$PIPELINE_KIND" == "release" ]] && [ ! -f .pre-commit-config.yaml ] && IS_RELEASE_PIPELINE="true" || IS_RELEASE_PIPELINE="false"
+if [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
     echo "Detected Release pipeline";
 fi
 # Only activate in preview builds or the first stage of a release
