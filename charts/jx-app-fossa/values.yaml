@@ -3,3 +3,5 @@
 image:
   repository: jx-mar19/jx-app-fossa
   tag: latest
+fossa:
+  apiKey: "MISSING"
