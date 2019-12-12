@@ -4,26 +4,23 @@
   "description": "values.schema.json for jx-app-fossa",
   "type": "object",
   "properties": {
-    "fossa": {
-      "type": "object",
-      "apiKey": {
-        "type": "string",
-        "title": "Enter your FOSSA API key",
-        "description": "If you are using a Push-Only token, you won't get detailed reports in the build log. You can retrieve your FOSSA API key from https://app.fossa.com/account/settings/integrations/api_tokens",
-        "format": "token"
-      },
-      "verifyonpreview": {
-        "type": "boolean",
-        "default": "true",
-        "title": "Fail Preview Builds?",
-        "description": "Stop the build if a policy violation is detected during a preview build. May delay builds by tens of seconds awaiting scan results."
-      },
-      "verifyonrelease": {
-        "type": "boolean",
-        "default": "true",
-        "title": "Fail Release Builds?",
-        "description": "Stop the build if a policy violation is detected during a release build. May delay builds by tens of seconds awaiting scan results."
-      }
+    "apiKey": {
+      "type": "string",
+      "title": "Enter your FOSSA API key",
+      "description": "If you are using a Push-Only token, you won't get detailed reports in the build log. You can retrieve your FOSSA API key from https://app.fossa.com/account/settings/integrations/api_tokens",
+      "format": "token"
+    },
+    "verifyonpreview": {
+      "type": "boolean",
+      "default": "true",
+      "title": "Fail Preview Builds?",
+      "description": "Stop the build if a policy violation is detected during a preview build. May delay builds by tens of seconds awaiting scan results."
+    },
+    "verifyonrelease": {
+      "type": "boolean",
+      "default": "true",
+      "title": "Fail Release Builds?",
+      "description": "Stop the build if a policy violation is detected during a release build. May delay builds by tens of seconds awaiting scan results."
     }
   }
 }
