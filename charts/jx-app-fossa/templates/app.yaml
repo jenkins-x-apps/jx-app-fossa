@@ -11,6 +11,6 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         command: /jx-app-fossa.sh
         args:
-          - k: "{{ .Values.apiKey }}"
-          - p: {{ .Values.verifyonpreview }}
-          - r: {{ .Values.verifyonrelease }}
+          - "k={{ .Values.apiKey }}"
+          - "p={{ .Values.verifyonpreview }}"
+          - "r={{ .Values.verifyonrelease }}"
