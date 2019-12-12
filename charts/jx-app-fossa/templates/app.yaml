@@ -12,4 +12,10 @@ spec:
         command: /jx-app-fossa.sh
         args:
           - none
-
+    env:
+        - name: FOSSA_API_KEY
+          value: "{{ .Values.apiKey }}"
+        - name: FOSSA_FAIL_PREVIEW
+          value: {{ .Values.verifyonpreview }}
+        - name: FOSSA_FAIL_RELEASE
+          value: {{ .Values.verifyonrelease }}
