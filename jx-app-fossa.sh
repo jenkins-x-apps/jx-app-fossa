@@ -2,6 +2,15 @@ whoami
 pwd
 env
 ls -la
+while getopts k:r:p: option
+do
+case "${option}"
+in
+u) FOSSA_API_KEY=${OPTARG};;
+d) FOSSA_FAIL_ON_RELEASE=${OPTARG};;
+p) FOSSA_FAIL_ON_PREVIEW=${OPTARG};;
+esac
+done
 unset IS_PREVIEW_PIPELINE
 unset IS_RELEASE_PIPELINE
 # Try and establish what phase of what type of build pipeline we are in
@@ -33,7 +42,6 @@ if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true"
         fi
     fi
     fossa init
-    export FOSSA_API_KEY=e8f6249ad76777febbcc6f59b43074b0
     fossa analyze
     fossa test
 else

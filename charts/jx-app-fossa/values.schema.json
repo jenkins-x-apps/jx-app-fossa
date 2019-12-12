@@ -8,7 +8,6 @@
       "type": "string",
       "title": "Enter your FOSSA API key",
       "description": "If you are using a Push-Only token, you won't get detailed reports in the build log. You can retrieve your FOSSA API key from https://app.fossa.com/account/settings/integrations/api_tokens",
-      "format": "token"
     },
     "verifyonpreview": {
       "type": "boolean",
