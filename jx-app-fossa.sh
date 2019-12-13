@@ -8,11 +8,15 @@ while getopts k:r:p: option
 do
 case "${option}"
 in
-u) FOSSA_API_KEY=${OPTARG};;
-d) FOSSA_FAIL_ON_RELEASE=${OPTARG};;
+k) FOSSA_API_KEY=${OPTARG};;
+r) FOSSA_FAIL_ON_RELEASE=${OPTARG};;
 p) FOSSA_FAIL_ON_PREVIEW=${OPTARG};;
 esac
 done
+echo $FOSSA_API_KEY
+echo $FOSSA_FAIL_ON_RELEASE
+echo $FOSSA_FAIL_ON_PREVIEW
+
 unset IS_PREVIEW_PIPELINE
 unset IS_RELEASE_PIPELINE
 # Try and establish what phase of what type of build pipeline we are in
