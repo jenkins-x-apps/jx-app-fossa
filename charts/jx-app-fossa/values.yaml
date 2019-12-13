@@ -3,3 +3,6 @@
 image:
   repository: jx-mar19/jx-app-fossa
   tag: latest
+apiKey: "{{ .Values.apiKey }}"
+verifyonpreview: "{{ .Values.verifyonpreview }}"
+verifyonrelease: "{{ .Values.verifyonrelease }}"
