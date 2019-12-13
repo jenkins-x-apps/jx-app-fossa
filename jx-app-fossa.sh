@@ -37,20 +37,23 @@ if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true"
         fi
     fi
     fossa init
-    fossa analyze
-    if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
-        if [[ ${FOSSA_FAIL_ON_PREVIEW} == "true" ]] ; then
-            fossa test
-        else
-            echo "Not waiting for results as FOSSA tests are configured to skip verification in preview builds."
+    if fossa analyze ; then
+        if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
+            if [[ ${FOSSA_FAIL_ON_PREVIEW} == "true" ]] ; then
+                fossa test
+            else
+                echo "Not waiting for results as FOSSA tests are configured to skip verification in preview builds."
+            fi
         fi
-    fi
-    if [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
-        if [[ ${FOSSA_FAIL_ON_RELEASE} == "true" ]] ; then
-            fossa test
-        else
-            echo "Not waiting for results as FOSSA tests are configured to skip verification in release builds."
+        if [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
+            if [[ ${FOSSA_FAIL_ON_RELEASE} == "true" ]] ; then
+                fossa test
+            else
+                echo "Not waiting for results as FOSSA tests are configured to skip verification in release builds."
+            fi
         fi
+    else
+        echo "WARNING: Can't find a supported codebase to analyse."
     fi
 else
     echo "Skipping FOSSA scan"
