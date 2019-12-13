@@ -1,1 +1,15 @@
 buildPack: go
+pipelineConfig:
+  pipelines:
+    release:
+      promote:
+        replace: true
+        steps:
+        - command: jx step changelog --version v${VERSION}
+          dir: /workspace/source/charts/jx-app-fossa
+          image: go
+          name: promote-changelog
+        - command: jx step helm release
+          dir: /workspace/source/charts/jx-app-fossa
+          image: go
+          name: promote-helm-release
