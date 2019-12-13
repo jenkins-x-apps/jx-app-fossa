@@ -1,0 +1,287 @@
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-mf5qc[0m
+{"level":"warn","ts":1576239318.1700962,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1576239318.1707265,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-sxz2j[0m
+{"level":"warn","ts":1576239319.5651035,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1576239319.5668545,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-bootstrap-jersey-jx-app-fo-xrrsh[0m
+{"level":"warn","ts":1576239325.767856,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1576239326.9981322,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bootstrap-Jersey/**-app-fossa.git @ 2b5f786d830dcc0c936a98c4cc3d1547bf0501a9 in path /workspace/source"}
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:2b5f786d830dcc0c936a98c4cc3d1547bf0501a9
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Effective pipeline written to jenkins-x-release-effective.yml
+
+Showing logs for build [32mmeta-bootstrap-jersey-jx-app-fo-7wv6z-47[0m stage [32mmeta-pipeline[0m and container [32mstep-fossa[0m
+root
+/workspace/source
+PROW_JOB_ID=
+HEAPSTER_SERVICE_PORT=8082
+TERRY_NODEJS_IDE_PORT=tcp://10.3.251.203:80
+JX_RELEASE_VERSION=1.0.17
+DEP_VERSION=v0.5.0
+HOSTNAME=meta-bootstrap-jersey-**-app-fo-7wv6z-47-meta-pipeline-w7v75-po
+TERRY_GO2_IDE_PORT_80_TCP=tcp://10.3.243.151:80
+TERRY_NODEJS_PORT_8080_PORT_80_TCP_PROTO=tcp
+EKSCTL_VERSION=0.6.0
+GOLANG_VERSION=1.12.4
+JOB_TYPE=postsubmit
+TERRY_NODEJS_PORT_9229_PORT_80_TCP_ADDR=10.3.247.17
+TERRY_GO2_IDE_PORT=tcp://10.3.243.151:80
+JENKINS_X_CHARTMUSEUM_PORT_8080_TCP_PROTO=tcp
+SOURCE_URL=https://github.com/Bootstrap-Jersey/**-app-fossa.git
+PIPELINERUNNER_PORT_80_TCP_PORT=80
+TERRY_NODEJS_PORT_9229_PORT_80_TCP_PROTO=tcp
+YQ_RELEASE_VERSION=2.4.1
+M2=/opt/apache-maven-3.6.3/bin
+KUBERNETES_PORT=tcp://10.3.240.1:443
+KUBERNETES_PORT_443_TCP_PORT=443
+TERRY_NODEJS_IDE_PORT_80_TCP_PORT=80
+VELERO_VERSION=1.1.0
+TERRY_GO2_IDE_PORT_80_TCP_PROTO=tcp
+TERRY_GO2_PORT_8080_SERVICE_PORT_TERRY_GO2_8080=80
+TIDE_SERVICE_PORT_HTTP=80
+BRANCH_NAME=master
+KUBERNETES_SERVICE_PORT=443
+DECK_SERVICE_PORT_HTTP=80
+TERRY_GO2_IDE_SERVICE_PORT_TERRY_GO2_IDE=80
+HEAPSTER_SERVICE_HOST=10.3.242.47
+GO15VENDOREXPERIMENT=1
+TEKTON_PIPELINES_CONTROLLER_PORT_9090_TCP_PROTO=tcp
+NEXUS_PORT_80_TCP=tcp://10.3.247.20:80
+TERRY_NODEJS_PORT_9229_SERVICE_HOST=10.3.247.17
+TERRY_GO2_PORT_2345_PORT_80_TCP_PROTO=tcp
+JOB_SPEC={"type":"postsubmit","job":"release","refs":{"org":"Bootstrap-Jersey","repo":"**-app-fossa","base_ref":"master","base_sha":"2b5f786d830dcc0c936a98c4cc3d1547bf0501a9"}}
+APP_NAME=**-app-fossa
+NEXUS_SERVICE_PORT=80
+HEAPSTER_PORT_8082_TCP=tcp://10.3.242.47:8082
+KUBERNETES_SERVICE_HOST=10.3.240.1
+TERRY_NODEJS_PORT_8080_PORT_80_TCP_ADDR=10.3.246.11
+PIPELINERUNNER_PORT_80_TCP_PROTO=tcp
+HOOK_PORT_80_TCP_PORT=80
+TERRY_GO2_IDE_PORT_80_TCP_PORT=80
+LC_ALL=en_US.UTF-8
+CONTAINER_STRUCTURE_TEST_VERSION=1.8.0
+TERRY_GO2_PORT_2345_SERVICE_PORT=80
+TERRY_GO2_PORT_8080_PORT_80_TCP_PROTO=tcp
+JENKINS_X_CHARTMUSEUM_PORT=tcp://10.3.244.250:8080
+TERRY_NODEJS_PORT_8080_SERVICE_PORT=80
+HEAPSTER_PORT_8082_TCP_PORT=8082
+TIDE_SERVICE_PORT=80
+HOOK_SERVICE_HOST=10.3.244.160
+TERRY_GO2_PORT_8080_PORT_80_TCP_ADDR=10.3.240.161
+TERRY_GO2_PORT_8080_SERVICE_PORT=80
+HOOK_PORT_80_TCP=tcp://10.3.244.160:80
+GORELEASER_VERSION=0.110.0
+MAVEN_VERSION=3.6.3
+HOOK_SERVICE_PORT=80
+TERRY_NODEJS_PORT_8080_PORT=tcp://10.3.246.11:80
+TERRY_NODEJS_PORT_3000_PORT_80_TCP_ADDR=10.3.249.137
+JENKINS_X_CHARTMUSEUM_SERVICE_PORT_HTTP=8080
+TERRY_NODEJS_PORT_9229_PORT=tcp://10.3.247.17:80
+HOOK_PORT_80_TCP_PROTO=tcp
+TERRY_NODEJS_PORT_9229_SERVICE_PORT_TERRY_NODEJS_9229=80
+TEKTON_PIPELINES_CONTROLLER_PORT_9090_TCP=tcp://10.3.251.104:9090
+TERRY_GO2_PORT_2345_PORT_80_TCP=tcp://10.3.252.62:80
+HEAPSTER_PORT=tcp://10.3.242.47:8082
+JENKINS_X_CHARTMUSEUM_SERVICE_PORT=8080
+PIPELINERUNNER_SERVICE_HOST=10.3.244.218
+HEAPSTER_PORT_8082_TCP_ADDR=10.3.242.47
+TERRY_NODEJS_PORT_8080_PORT_80_TCP_PORT=80
+JENKINS_X_CHARTMUSEUM_PORT_8080_TCP_PORT=8080
+PULL_BASE_SHA=2b5f786d830dcc0c936a98c4cc3d1547bf0501a9
+DECK_PORT_80_TCP_PORT=80
+TERRY_GO2_PORT_8080_PORT=tcp://10.3.240.161:80
+PATH=/opt/apache-maven-3.6.3/bin:/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/google-cloud-sdk/bin:/opt/google/chrome:/usr/local/go/bin:/usr/local/glide:/usr/local/dep:/usr/local/:/home/jenkins/go/bin
+TERRY_NODEJS_IDE_SERVICE_PORT=80
+PIPELINERUNNER_SERVICE_PORT_HTTP=80
+PROTOBUF=3.5.1
+HUGO_VERSION=0.58.0
+DECK_SERVICE_PORT=80
+JENKINS_X_CHARTMUSEUM_PORT_8080_TCP=tcp://10.3.244.250:8080
+TERRY_GO2_PORT_8080_SERVICE_HOST=10.3.240.161
+DECK_PORT=tcp://10.3.254.158:80
+GCLOUD_VERSION=270.0.0
+TEKTON_PIPELINES_CONTROLLER_PORT=tcp://10.3.251.104:9090
+maven.home=/opt/apache-maven-3.6.3
+TIDE_PORT_80_TCP_PORT=80
+TERRY_NODEJS_PORT_3000_SERVICE_HOST=10.3.249.137
+PWD=/workspace/source
+PIPELINERUNNER_PORT=tcp://10.3.244.218:80
+PIPELINE_KIND=release
+TEKTON_PIPELINES_CONTROLLER_PORT_9090_TCP_PORT=9090
+TERRY_GO2_PORT_2345_PORT_80_TCP_PORT=80
+TEKTON_PIPELINES_CONTROLLER_SERVICE_HOST=10.3.251.104
+TERRY_NODEJS_PORT_8080_SERVICE_PORT_TERRY_NODEJS_8080=80
+JX_VERSION=2.0.1062
+TERRY_NODEJS_PORT_9229_PORT_80_TCP_PORT=80
+DECK_SERVICE_HOST=10.3.254.158
+LANG=en_US.UTF-8
+JOB_NAME=Bootstrap-Jersey/**-app-fossa/master
+PULL_BASE_REF=master
+TIDE_SERVICE_HOST=10.3.255.172
+TERRY_NODEJS_IDE_SERVICE_PORT_TERRY_NODEJS_IDE=80
+NEXUS_SERVICE_PORT_NEXUS=80
+REPO_NAME=**-app-fossa
+BUILD_ID=
+TEKTON_PIPELINES_CONTROLLER_SERVICE_PORT=9090
+TERRY_GO2_PORT_2345_PORT=tcp://10.3.252.62:80
+TIDE_PORT_80_TCP_ADDR=10.3.255.172
+TERRY_NODEJS_PORT_3000_SERVICE_PORT_TERRY_NODEJS_3000=80
+TERRY_NODEJS_PORT_3000_PORT_80_TCP=tcp://10.3.249.137:80
+EXPOSECONTROLLER_VERSION=2.3.34
+TIDE_PORT_80_TCP_PROTO=tcp
+NEXUS_PORT_80_TCP_ADDR=10.3.247.20
+TERRY_NODEJS_IDE_SERVICE_HOST=10.3.251.203
+TERRY_NODEJS_PORT_9229_PORT_80_TCP=tcp://10.3.247.17:80
+GLIDE_VERSION=v0.13.1
+DECK_PORT_80_TCP_ADDR=10.3.254.158
+HOME=/builder/home
+TERRY_NODEJS_PORT_3000_PORT_80_TCP_PORT=80
+TERRY_GO2_PORT_2345_SERVICE_PORT_TERRY_GO2_2345=80
+M2_HOME=/opt/apache-maven-3.6.3
+SHLVL=2
+PULL_REFS=master:2b5f786d830dcc0c936a98c4cc3d1547bf0501a9
+TERRY_NODEJS_PORT_3000_SERVICE_PORT=80
+TIDE_PORT=tcp://10.3.255.172:80
+TERRY_NODEJS_PORT_8080_SERVICE_HOST=10.3.246.11
+LANGUAGE=en_US:en
+GOROOT=/usr/local/go
+TEKTON_PIPELINES_CONTROLLER_PORT_9090_TCP_ADDR=10.3.251.104
+TERRY_GO2_PORT_2345_PORT_80_TCP_ADDR=10.3.252.62
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+TERRY_NODEJS_IDE_PORT_80_TCP_PROTO=tcp
+SKAFFOLD_VERSION=1.0.1
+REPO_OWNER=Bootstrap-Jersey
+TERRY_NODEJS_PORT_8080_PORT_80_TCP=tcp://10.3.246.11:80
+HOOK_SERVICE_PORT_HTTP=80
+KUBERNETES_SERVICE_PORT_HTTPS=443
+NEXUS_PORT=tcp://10.3.247.20:80
+PIPELINERUNNER_PORT_80_TCP=tcp://10.3.244.218:80
+HOOK_PORT_80_TCP_ADDR=10.3.244.160
+TEKTON_PIPELINES_CONTROLLER_SERVICE_PORT_METRICS=9090
+DECK_PORT_80_TCP=tcp://10.3.254.158:80
+JENKINS_X_CHARTMUSEUM_SERVICE_HOST=10.3.244.250
+UPDATEBOT_VERSION=1.1.41
+JQ_RELEASE_VERSION=1.5
+GIT_VERSION=2.21.0
+TERRY_NODEJS_PORT_3000_PORT_80_TCP_PROTO=tcp
+PIPELINERUNNER_SERVICE_PORT=80
+NEXUS_PORT_80_TCP_PORT=80
+GH_RELEASE_VERSION=2.2.1
+TERRY_GO2_PORT_8080_PORT_80_TCP_PORT=80
+JENKINS_X_CHARTMUSEUM_PORT_8080_TCP_ADDR=10.3.244.250
+TERRY_NODEJS_PORT_9229_SERVICE_PORT=80
+TERRY_GO2_IDE_SERVICE_HOST=10.3.243.151
+GOPATH=/home/jenkins/go
+BUILD_NUMBER=47
+HOOK_PORT=tcp://10.3.244.160:80
+DOCKER_VERSION=17.12.0
+HELM_VERSION=2.14.3
+KUBERNETES_PORT_443_TCP_ADDR=10.3.240.1
+TERRY_NODEJS_PORT_3000_PORT=tcp://10.3.249.137:80
+TERRY_NODEJS_IDE_PORT_80_TCP_ADDR=10.3.251.203
+HEAPSTER_PORT_8082_TCP_PROTO=tcp
+NEXUS_SERVICE_HOST=10.3.247.20
+TERRY_GO2_IDE_PORT_80_TCP_ADDR=10.3.243.151
+TERRY_GO2_PORT_8080_PORT_80_TCP=tcp://10.3.240.161:80
+TERRY_GO2_PORT_2345_SERVICE_HOST=10.3.252.62
+KUBERNETES_PORT_443_TCP=tcp://10.3.240.1:443
+TERRY_GO2_IDE_SERVICE_PORT=80
+TERRY_NODEJS_IDE_PORT_80_TCP=tcp://10.3.251.203:80
+TIDE_PORT_80_TCP=tcp://10.3.255.172:80
+PIPELINERUNNER_PORT_80_TCP_ADDR=10.3.244.218
+DECK_PORT_80_TCP_PROTO=tcp
+PIPELINE_CONTEXT=release
+NEXUS_PORT_80_TCP_PROTO=tcp
+REFLEX_VERSION=0.3.1
+_=/usr/bin/env
+total 88
+drwxr-xr-x 4 root root  4096 Dec 13 12:15 .
+drwxrwxrwx 3 root root  4096 Dec 13 12:15 ..
+drwxr-xr-x 3 root root  4096 Dec 13 12:15 charts
+-rw-r--r-- 1 root root   297 Dec 13 12:15 Dockerfile
+-rw-r--r-- 1 root root   217 Dec 13 12:15 .dockerignore
+drwxr-xr-x 8 root root  4096 Dec 13 12:15 .git
+-rw-r--r-- 1 root root    27 Dec 13 12:15 .gitattributes
+-rw-r--r-- 1 root root    65 Dec 13 12:15 .gitignore
+-rw-r--r-- 1 root root   398 Dec 13 12:15 .helmignore
+-rwxr----- 1 root root  8686 Dec 13 12:15 jenkins-x-release-effective.yml
+-rwxr-xr-x 1 root root   423 Dec 13 12:15 jenkins-x.yml
+-rwxr-xr-x 1 root root  1770 Dec 13 12:15 **-app-fossa.sh
+-rw-r--r-- 1 root root 11348 Dec 13 12:15 LICENSE
+-rw-r--r-- 1 root root  1549 Dec 13 12:15 Makefile
+-rw-r--r-- 1 root root    38 Dec 13 12:15 OWNERS
+-rw-r--r-- 1 root root    65 Dec 13 12:15 OWNERS_ALIASES
+-rw-r--r-- 1 root root    16 Dec 13 12:15 README.md
+-rw-r--r-- 1 root root   644 Dec 13 12:15 skaffold.yaml
+Setup
+k=e8f6249ad76777febbcc6f59b43074b0 p=true r=true
+Detected Release pipeline
+FOSSA is scanning dependencies...
+false
+true
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  8513  100  8513    0     0  22153      0 --:--:-- --:--:-- --:--:-- 22111
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   626    0   626    0     0    840      0 --:--:-- --:--:-- --:--:--   840
+CHANGELOG.md
+LICENSE
+README.md
+fossa
+  3 5862k    3  203k    0     0   118k      0  0:00:49  0:00:01  0:00:48  118k 11 5862k   11  679k    0     0   243k      0  0:00:24  0:00:02  0:00:22  445k 20 5862k   20 1189k    0     0   314k      0  0:00:18  0:00:03  0:00:15  479k 30 5862k   30 1800k    0     0   380k      0  0:00:15  0:00:04  0:00:11  531k 43 5862k   43 2531k    0     0   439k      0  0:00:13  0:00:05  0:00:08  577k 57 5862k   57 3347k    0     0   496k      0  0:00:11  0:00:06  0:00:05  626k 72 5862k   72 4266k    0     0   551k      0  0:00:10  0:00:07  0:00:03  726k 90 5862k   90 5320k    0     0   610k      0  0:00:09  0:00:08  0:00:01  836k100 5862k  100 5862k    0     0   641k      0  0:00:09  0:00:09 --:--:--  922k
+INFO Initializing...
+FATAL Could not initialize 
+TROUBLESHOOTING: A FOSSA API key is needed to run this command.
+
+
+Running `fossa analyze` performs a dependency analysis and uploads the result
+to FOSSA. To run an analysis without uploading results, run:
+
+    fossa analyze --output
+
+You can provide your API key by setting the $FOSSA_API_KEY environment
+variable. For example, try running:
+
+    FOSSA_API_KEY=<YOUR_API_KEY_HERE> $command
+
+You can create an API key for your FOSSA account at:
+    
+    app.fossa.com/account/settings/integrations/api_tokens
+
+
+ERROR: 
+TROUBLESHOOTING: A FOSSA API key is needed to run this command.
+
+
+Running `fossa analyze` performs a dependency analysis and uploads the result
+to FOSSA. To run an analysis without uploading results, run:
+
+    fossa analyze --output
+
+You can provide your API key by setting the $FOSSA_API_KEY environment
+variable. For example, try running:
+
+    FOSSA_API_KEY=<YOUR_API_KEY_HERE> $command
+
+You can create an API key for your FOSSA account at:
+    
+    app.fossa.com/account/settings/integrations/api_tokens
+
+
+
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-fossa'. The execution of the pipeline has stopped.[0m
