@@ -1,21 +1,12 @@
-whoami
-pwd
-env
-ls -la
-echo "Setup"
-echo $*
 while getopts k:r:p: option
 do
 case "${option}"
 in
-k) FOSSA_API_KEY=${OPTARG};;
+k) export FOSSA_API_KEY=${OPTARG};;
 r) FOSSA_FAIL_ON_RELEASE=${OPTARG};;
 p) FOSSA_FAIL_ON_PREVIEW=${OPTARG};;
 esac
 done
-echo $FOSSA_API_KEY
-echo $FOSSA_FAIL_ON_RELEASE
-echo $FOSSA_FAIL_ON_PREVIEW
 
 unset IS_PREVIEW_PIPELINE
 unset IS_RELEASE_PIPELINE
@@ -31,8 +22,6 @@ fi
 # Only activate in preview builds or the first stage of a release
 if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
     echo "FOSSA is scanning dependencies..."
-    echo $IS_PREVIEW_PIPELINE
-    echo $IS_RELEASE_PIPELINE
     mkdir fossa-dl
     curl "https://api.github.com/repos/fossas/fossa-cli/releases/latest" | \
         grep '"tag_name":' | \
@@ -43,13 +32,26 @@ if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] || [[ ${IS_RELEASE_PIPELINE} == "true"
     if [ -f main.go ]; then
         # This is a Go project
         if [ ! -f go.mod ]; then
-            # Fossa requires a mod file or lock file
+            # Fossa requires a mod file or lock file or analysis will fail
             go mod init
         fi
     fi
     fossa init
     fossa analyze
-    fossa test
+    if [[ ${IS_PREVIEW_PIPELINE} == "true" ]] ; then
+        if [[ ${FOSSA_FAIL_ON_PREVIEW} == "true" ]] ; then
+            fossa test
+        else
+            echo "Not waiting for results as FOSSA tests are configured to skip verification in preview builds."
+        fi
+    fi
+    if [[ ${IS_RELEASE_PIPELINE} == "true" ]] ; then
+        if [[ ${FOSSA_FAIL_ON_RELEASE} == "true" ]] ; then
+            fossa test
+        else
+            echo "Not waiting for results as FOSSA tests are configured to skip verification in release builds."
+        fi
+    fi
 else
     echo "Skipping FOSSA scan"
 fi
