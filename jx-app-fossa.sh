@@ -2,6 +2,8 @@ whoami
 pwd
 env
 ls -la
+echo "Setup"
+echo $*
 while getopts k:r:p: option
 do
 case "${option}"
