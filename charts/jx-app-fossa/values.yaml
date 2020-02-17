@@ -1,7 +1,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: gcr.io/jx-mar19/jx-app-fossa
+  repository: gcr.io/jenkinsxio/jx-app-fossa
   tag: 1.0.0
 apiKey: "{{ .Values.apiKey }}"
 verifyonpreview: "{{ .Values.verifyonpreview }}"

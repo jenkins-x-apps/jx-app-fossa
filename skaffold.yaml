@@ -2,7 +2,7 @@ apiVersion: skaffold/v1beta2
 kind: Config
 build:
   artifacts:
-  - image: jx-mar19/jx-app-fossa
+  - image: jenkinsxio/jx-app-fossa
     context: .
     docker: {}
   tagPolicy:
