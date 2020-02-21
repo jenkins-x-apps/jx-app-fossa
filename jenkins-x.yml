@@ -10,17 +10,51 @@ env:
     value: jenkins-x-bot
   - name: GOOGLE_APPLICATION_CREDENTIALS
     value: /builder/home/kaniko-secret.json
+  - name: CHARTMUSEUM_USER
+    valueFrom:
+      secretKeyRef:
+        name: jenkins-x-chartmuseum
+        key: BASIC_AUTH_USER
+  - name: CHARTMUSEUM_PASS
+    valueFrom:
+      secretKeyRef:
+        name: jenkins-x-chartmuseum
+        key: BASIC_AUTH_PASS
 pipelineConfig:
   pipelines:
+    pullRequest:
+      pipeline:
+        agent:
+          image: gcr.io/jenkinsxio/builder-go
+        stages:
+          - name: build-and-lint
+            steps:
+              - name: replace-builder-version
+                sh: bash update-builder-version-in-dockerfile.sh
+              - name: build-image
+                image: gcr.io/kaniko-project/executor:debug-9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+                command: /kaniko/executor
+                args:
+                  - --dockerfile=/workspace/source/Dockerfile
+                  - --destination=gcr.io/jenkinsxio/jx-app-fossa:${inputs.params.version}
+                  - --context=/workspace/source
+              - name: lint
+                sh: make build
     release:
-      promote:
-        replace: true
-        steps:
-        - command: jx step changelog --version v${VERSION}
-          dir: /workspace/source/charts/jx-app-fossa
-          image: go
-          name: promote-changelog
-        - command: jx step helm release
-          dir: /workspace/source/charts/jx-app-fossa
-          image: go
-          name: promote-helm-release
+      pipeline:
+        agent:
+          image: gcr.io/jenkinsxio/builder-go
+        stages:
+          - name: release
+            steps:
+              - name: replace-builder-version
+                sh: bash update-builder-version-in-dockerfile.sh
+              - name: build-image
+                image: gcr.io/kaniko-project/executor:debug-9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+                command: /kaniko/executor
+                args:
+                  - --dockerfile=/workspace/source/Dockerfile
+                  - --destination=gcr.io/jenkinsxio/jx-app-fossa:${inputs.params.version}
+                  - --context=/workspace/source
+              - name: release
+                sh: make release

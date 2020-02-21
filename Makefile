@@ -1,66 +1,43 @@
-SHELL := /bin/bash
-GO := GO15VENDOREXPERIMENT=1 go
+CHART_REPO := http://jenkins-x-chartmuseum:8080
 NAME := jx-app-fossa
 OS := $(shell uname)
-MAIN_GO := main.go
-ROOT_PACKAGE := $(GIT_PROVIDER)/$(ORG)/$(NAME)
-GO_VERSION := $(shell $(GO) version | sed -e 's/^[^0-9.]*\([0-9.]*\).*/\1/')
-PACKAGE_DIRS := $(shell $(GO) list ./... | grep -v /vendor/)
-PKGS := $(shell go list ./... | grep -v /vendor | grep -v generated)
-PKGS := $(subst  :,_,$(PKGS))
-BUILDFLAGS := ''
-CGO_ENABLED = 0
-VENDOR_DIR=vendor
 
-all: build
+init:
+	helm init --client-only
 
-check: fmt build test
+setup: init
+	helm repo add jenkinsxio http://chartmuseum.jenkins-x.io
 
-.PHONY: build
-build:
-	echo 'nothing to build'
+build: clean setup
+	helm dependency build ${NAME}
+	helm lint ${NAME}
 
-test: 
-	CGO_ENABLED=$(CGO_ENABLED) $(GO) test $(PACKAGE_DIRS) -test.v
+install: clean build
+	helm upgrade ${NAME} ${NAME} --install
 
-full: $(PKGS)
+upgrade: clean build
+	helm upgrade ${NAME} ${NAME} --install
 
-install:
-	GOBIN=${GOPATH}/bin $(GO) install -ldflags $(BUILDFLAGS) $(MAIN_GO)
-
-fmt:
-	@FORMATTED=`$(GO) fmt $(PACKAGE_DIRS)`
-	@([[ ! -z "$(FORMATTED)" ]] && printf "Fixed unformatted files:\n$(FORMATTED)") || true
+delete:
+	helm delete --purge ${NAME} ${NAME}
 
 clean:
-	rm -rf build release
+	rm -rf ${NAME}/charts
+	rm -rf ${NAME}/${NAME}*.tgz
+	rm -rf ${NAME}/requirements.lock
 
-linux:
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=linux GOARCH=amd64 $(GO) build -ldflags $(BUILDFLAGS) -o bin/$(NAME) $(MAIN_GO)
+release: clean build
+ifeq ($(OS),Darwin)
+	sed -i "" -e "s/version:.*/version: $(VERSION)/" ${NAME}/Chart.yaml
 
-.PHONY: release clean
+else ifeq ($(OS),Linux)
+	sed -i -e "s/version:.*/version: $(VERSION)/" ${NAME}/Chart.yaml
+else
+	exit -1
+endif
+	helm package ${NAME}
+	curl --fail -u $(CHARTMUSEUM_USER):$(CHARTMUSEUM_PASS) --data-binary "@$(NAME)-$(VERSION).tgz" $(CHART_REPO)/api/charts
+	rm -rf ${NAME}*.tgz
 
-FGT := $(GOPATH)/bin/fgt
-$(FGT):
-	go get github.com/GeertJohan/fgt
-
-GOLINT := $(GOPATH)/bin/golint
-$(GOLINT):
-	go get github.com/golang/lint/golint
-
-$(PKGS): $(GOLINT) $(FGT)
-	@echo "LINTING"
-	@$(FGT) $(GOLINT) $(GOPATH)/src/$@/*.go
-	@echo "VETTING"
-	@go vet -v $@
-	@echo "TESTING"
-	@go test -v $@
-
-.PHONY: lint
-lint: vendor | $(PKGS) $(GOLINT) # ❷
-	@cd $(BASE) && ret=0 && for pkg in $(PKGS); do \
-	    test -z "$$($(GOLINT) $$pkg | tee /dev/stderr)" || ret=1 ; \
-	done ; exit $$ret
-
-watch:
-	reflex -r "\.go$" -R "vendor.*" make skaffold-run
+delete-from-chartmuseum:
+	curl --fail -u $(CHARTMUSEUM_USER):$(CHARTMUSEUM_PASS) -X DELETE $(CHART_REPO)/api/charts/$(NAME)/$(VERSION)
